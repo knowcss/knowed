@@ -29,4 +29,14 @@ $knowed('<div>new</div>').each(elem => {
 
 // Anything that works with querySelector/querySelectorAll/getElementById/etc
 $knowed('ANY VALID QUERY SELECTOR').each(elem => {});
+
+// Extend base functionality with your own methods
+window.$knowedExtend.push({
+    'display': function (val) { return this.each(elem => { elem.style.display = val || 'block'; }); },
+    'visibility': function (val) { return this.each(elem => { elem.style.visibility = val || 'visible'; }); }
+});
+window.$knowedExtend.push({
+    'hide': function () { return this.display('none').visibility('hidden'); },
+    'show': function (val) { return this.display(val || 'block').visibility('visible'); },
+});
 ```
