@@ -1,6 +1,8 @@
 # knowed
 The No-Nonsense Query Selector
 
+knowed.js is a powerful query selector that allows you to select, manage, and create nodes within DOM.
+
 ```
 // string, comma separated strings, or array
 $knowed('div').each(elem => { console.log(elem); });
