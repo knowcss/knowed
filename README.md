@@ -63,4 +63,11 @@ window.$knowedExtend.push({
     'hide': function () { return this.display('none').visibility('hidden'); },
     'show': function (val) { return this.display(val || 'block').visibility('visible'); },
 });
+
+// easy events
+window.$knowedExtend.push({
+    'on': function (event, callback, config) { return this.each(elem => { elem.addEventListener(event, callback, config); }); },
+    'off': function (event, callback) { return this.each(elem => { elem.removeEventListener(event, callback); }); },
+    'once': function (event, callback) { return this.on(event, callback, { once: true }); }
+});
 ```
