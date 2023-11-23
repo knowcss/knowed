@@ -6,7 +6,14 @@ The No-Nonsense Query Selector
 $knowed('div').each(elem => { console.log(elem); });
 $knowed(['div']).each(elem => { console.log(elem); });
 $knowed('div,span').each(elem => { console.log(elem); });
-$knowed(['div','span']).each(elem => { console.log(elem); });
+$knowed(['div', 'span']).each(elem => { console.log(elem); });
+
+// by tag, id, class, attributes, or combine all 4 as needed
+$knowed('.class').each(elem => { console.log(elem); });
+$knowed('#id').each(elem => { console.log(elem); });
+$knowed('[data-attr]').each(elem => { console.log(elem); });
+$knowed('form,.class,#id,[data-attr]').each(elem => { console.log(elem); });
+$knowed(['form', '.class', '#id', '[data-attr]']).each(elem => { console.log(elem); });
 
 // use your own callback function
 const callBack = (elem) => {};
