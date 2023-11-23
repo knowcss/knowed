@@ -8,6 +8,16 @@ $knowed(['div']).each(elem => { console.log(elem); });
 $knowed('div,span').each(elem => { console.log(elem); });
 $knowed(['div','span']).each(elem => { console.log(elem); });
 
+// use your own callback function
+const callBack = (elem) => {};
+$knowed('div').each(callBack);
+
+// selector may be window, document, body, head etc
+$knowed(window).each(callBack);
+$knowed(document).each(callBack);
+$knowed('body').each(callBack);
+$knowed('head').each(callBack);
+
 // node or nodes or arrays of nodes
 const id = document.querySelector('#id');
 $knowed(id).each(elem => {});
