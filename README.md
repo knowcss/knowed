@@ -50,10 +50,15 @@ $knowed('<div>new</div>').each(elem => {
 $knowed('ANY VALID QUERY SELECTOR').each(elem => {});
 
 // Extend base functionality with your own methods
+window.$knowedExtend = window.$knowedExtend || [];
+
+// display basics for nodes
 window.$knowedExtend.push({
     'display': function (val) { return this.each(elem => { elem.style.display = val || 'block'; }); },
     'visibility': function (val) { return this.each(elem => { elem.style.visibility = val || 'visible'; }); }
 });
+
+// hide and show nodes
 window.$knowedExtend.push({
     'hide': function () { return this.display('none').visibility('hidden'); },
     'show': function (val) { return this.display(val || 'block').visibility('visible'); },
