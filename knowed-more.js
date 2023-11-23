@@ -111,7 +111,7 @@ window.$knowedExtend.push({
         var key = "";
         if ("name" in elem && elem.name) { key = elem.name; }
         else if ("id" in elem && elem.id) { key = elem.id; }
-        else { key = "_field" + i; }
+        else if (i) { key = "_field" + i; }
         if (key) { ret[key] = this.value(elem); }
         return ret;
     },
@@ -126,7 +126,7 @@ window.$knowedExtend.push({
                     ret = ctx.input(elemChild, ret, i);
                 });
             }
-            else { ret = ctx.keyVal(elem, ret); }
+            else { ret = ctx.input(elem, ret); }
         });
         return ret;
     }
